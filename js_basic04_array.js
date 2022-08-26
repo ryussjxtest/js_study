@@ -51,49 +51,53 @@
 
 
 
-////////////////////////////////////////////////////////////////////////////////
-// etc.
-let days = ['월', '화','수','목','금','토',];
+// ////////////////////////////////////////////////////////////////////////////////
+// // etc.
+// let days = ['월', '화','수','목','금','토',];
 
-// //길이. arr.length
-// console.log(days.length);
+// // //길이. arr.length
+// // console.log(days.length);
 
-// // 추가. arr.push('item')   - stack 동작
-// days.push('일')
-// console.log(days.length, days[days.length-1]);
-// console.log(days);
+// // // 추가. arr.push('item')   - stack 동작
+// // days.push('일')
+// // console.log(days.length, days[days.length-1]);
+// // console.log(days);
 
 
-// // 복수개 추가.
-// days.push('일',0)
-// console.log(days.length, days[0], days[days.length-1]);
-// console.log(days);
+// // // 복수개 추가.
+// // days.push('일',0)
+// // console.log(days.length, days[0], days[days.length-1]);
+// // console.log(days);
 
-// // arr 추가. 
-// let days_en = ['mon', 'tue',];
-// days.push(days_en);
+// // // arr 추가. 
+// // let days_en = ['mon', 'tue',];
+// // days.push(days_en);
+// // console.log(days.length, days);
+
+// // // 삭제 pop 뒤에서 pop된다. 
+// // // push가 뒤에서 추가 되듯이....
+
+// console.log('days.pop()',days.pop());
+// console.log(days.length, days);
+// console.log('days.pop()',days.pop());
+// console.log(days.length, days);
+// days.pop(2); // 왜지???  개수도 index도 아니고..그냥 pop()과 동일하다.
 // console.log(days.length, days);
 
-// // 삭제 pop 뒤에서 pop된다. 
-// // push가 뒤에서 추가 되듯이....
 
-console.log('days.pop()',days.pop());
-console.log(days.length, days);
-console.log('days.pop()',days.pop());
-console.log(days.length, days);
-days.pop(2); // 왜지???  개수도 index도 아니고..그냥 pop()과 동일하다.
-console.log(days.length, days);
+// // // 앞쪽 추가(unshift), 제거(shift)  - 큐 동작
+// // days.unshift('일');
+// // console.log(days.length, days);
+
+// // days.unshift('금','토');
+// // console.log(days.length, days);
+
+// // days.shift();
+// // console.log(days.length, days);
 
 
-// // 앞쪽 추가(unshift), 제거(shift)  - 큐 동작
-// days.unshift('일');
-// console.log(days.length, days);
 
-// days.unshift('금','토');
-// console.log(days.length, days);
 
-// days.shift();
-// console.log(days.length, days);
 
 
 
@@ -120,3 +124,10 @@ console.log(days.length, days);
 
 //기본 for문을 사용할지... for...of를 사용할지는 index가 필요한지. 값만 알면 되는지 이다.
 
+
+
+
+// if문 
+const a = 5;
+const b = (3<= a <5);
+console.log(b);

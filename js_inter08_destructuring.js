@@ -78,8 +78,8 @@
 
 
 
-////////////////////////////////////////////////////////////////////////////////
-// 겍체 구조 분해. : 개수가 다를때 , default값 설정가능
+// ////////////////////////////////////////////////////////////////////////////////
+// // 겍체 구조 분해. : 개수가 다를때 , default값 설정가능
 let user = { name:"Mike", age : 30};
 console.log(user);
 
@@ -94,7 +94,8 @@ console.log(hobby); // undefined, 값이 부족.
 let {name:newName, age:newAge, hobby:newHobby="soccor"} = user;
 console.log(newName);
 console.log(newAge);
-console.log(newHobby); // undefined, 값이 부족.
+console.log(newHobby); // default값으로..
+
 
 
 

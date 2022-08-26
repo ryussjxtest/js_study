@@ -175,8 +175,8 @@
 //   }
 // })
 
-// // 방법 4 arr.map
-// // map은 새로운 배열을 생성.  return이 있다.
+// 방법 4 arr.map
+// map은 새로운 배열을 생성.  return이 있다.
 // let result4 = users.map((item,idx)=>{
 //   if (item.age < 19){
 //     // console.log(`${item.name}이 나이 ${item.age}로 미성년자입니다.`)
@@ -227,13 +227,15 @@
 //     {name:'Rose', age : 18},
 //   ];
   
-// let detailUser = users.map((item, idx)=>{
+// let detailUser = users.map((item, i)=>{
+//   console.log(item, i);
 //   return Object.assign({}, item, {
-//     id : idx +1,
+//     id : i +1,
 //     isAudult : item.age > 19,
 //   }); // 새로운 객체를 만들어  property를 추가 한다.
 // });
-// console.log(detailUser); //[{…}, {…}, {…}, {…}, {…}]
+// // console.log(users); //[{…}, {…}, {…}, {…}, {…}]
+// // console.log(detailUser); //[{…}, {…}, {…}, {…}, {…}]
 // // 풀어서 찍어보자
 // for (ll of detailUser){
 //   console.log(ll);
@@ -377,13 +379,13 @@
 
 
 
-// ////////////////////////////////////////////////////////////////////////////////
-// // arr.sort(fn)의 fn 정의가 어렵다.
-// // 잘 만들어진 lib를  이용한다. Lodash.
-// // 뭔가 package를 설치해야 한다. 나중에 해보자.
-// let user = ["mike", "Janes", "aB","zoo","Tom","Ab"];
-// _.sortBy(user);
-// console.log(user); 
+// // ////////////////////////////////////////////////////////////////////////////////
+// // // arr.sort(fn)의 fn 정의가 어렵다.
+// // // 잘 만들어진 lib를  이용한다. Lodash.
+// // // 뭔가 package를 설치해야 한다. 나중에 해보자.
+// // let user = ["mike", "Janes", "aB","zoo","Tom","Ab"];
+// // _.sortBy(user);
+// // console.log(user); 
 
 
 
@@ -501,6 +503,61 @@
 // }, []);
 // console.log(lenOfName);
 
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// reduce 실습.
+// 여러가지 방식이 가능. 여기서는 reduce 만으로
+const studentInfo ={
+  count : 1,
+  students:[
+    {
+      id:Date.now(),
+      name:"Mike",
+      age:30,
+      isAdult:true,
+    }
+  ],
+}
+const print_studentInfo = () =>{
+  console.log(studentInfo.count);
+  stu = studentInfo.students;
+  for(let i = 0 ; i < stu.length ; i++){
+    console.log(stu[i]);
+  }
+}
+
+const add_studentInfo = (s) =>{
+  console.log("[add_studentInfo] ",s);
+  studentInfo.count += 1;
+  // console.log("[add_studentInfo] ",studentInfo.count);
+  const newStu = {id:studentInfo.students[studentInfo.students.length -1].id +1,
+    ...s,
+    isAdult:s.age>19?true:false}
+  // console.log("[add_studentInfo] ",newStu);
+  studentInfo.students = [...studentInfo.students,newStu];
+
+}
+
+print_studentInfo();
+const newStudent = {
+    // id:Date.now(),
+    name:"Jane",
+    age:18,
+};
+const newStudent2= {
+  // id:Date.now(),
+  name:"Tom",
+  age:20,
+};
+add_studentInfo(newStudent);
+add_studentInfo(newStudent2);
+add_studentInfo(newStudent);
+add_studentInfo(newStudent2);
+add_studentInfo(newStudent);
+add_studentInfo(newStudent2);
+print_studentInfo();
 
 
 // ////////////////////////////////////////////////////////////////////////////////
